@@ -1,0 +1,16 @@
+//project --topLevelPackage org.projname --java 6 --projectName projname
+// persistence setup --provider OPENJPA --database   HYPERSONIC_IN_MEMORY --applicationId projname --persistenceUnit projname
+entity  --persistenceUnit projname --class org.projname.model.Item
+focus --class org.projname.model.Item
+field string  --fieldName attr1
+field string  --fieldName attr2
+field string  --fieldName attr3
+properties set --name projname.properties --path ROOT --key roo.version --value 1.1.0.RELEASE
+properties set --name projname.properties --path ROOT --key spring.version --value 3.0.5.RELEASE
+properties set --name projname.properties --path ROOT --key aspectj.version --value 1.6.10
+properties set --name projname.properties --path ROOT --key slf4j.version --value 1.6.1
+properties set --name projname.properties --path ROOT --key project.build.sourceEncoding --value UTF-8
+properties set --name projname.properties --path ROOT --key openjpa.version --value 2.0.1
+//dependency add --artifactId h2 --groupId com.h2database --version 1.2.144
+test integration --entity org.projname.model.Item
+//gwt setup
